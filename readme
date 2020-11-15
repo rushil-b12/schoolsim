@@ -1,0 +1,23 @@
+class Student:
+
+- generate subjects (default if subjects not given)
+- 
+
+class Class:
+
+- add new Student/remove Student
+- give test
+    - select subject to give test for (eng, math, sci1, sci2, hum1, hum2, art, lang)
+    - randomize but give higher chance to pass
+
+things to take into accoutn in interface:
+- is Student?
+    - ask for class
+    - then ask for name
+    - check if name is in class
+    - then display only student's records
+
+- is Teacher?
+     - ask for class
+     - then ask for password (will be fixed)
+     - then display class' records 
