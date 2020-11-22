@@ -1,15 +1,26 @@
 from student import Student
+from datetime import date
+from random import randint
+from generators import *
 
 class Class:
-    def __init__(self, classname = '', students = []):
-        if len(students) > 4:
-            self.students = students
-        else:
-            for i in range(5):
-                self.students.append(Student)
-    
-    def __str__(self):
-        return f'Class {classname}: {students}'
+    def __init__(self, classname='', students = []):
+        self.students = students.copy()
+        self.classname = classname 
 
-c = Class([])
-print(c)
+    def __str__(self):
+        return f'Class {self.classname}: {[s.name for s in self.students]}'
+
+    def add_student(self, student):
+        self.students.append(student)
+
+    def remove_student(self, removing):
+        for s in self.students:
+            if s.name == removing:
+                self.students.remove(s)
+
+if __name__ == '__main__':
+    c = Class('A', [generate_student(), generate_student()])
+    print(c)
+    c.add_student(generate_student())
+    print(c)
