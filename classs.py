@@ -1,7 +1,7 @@
 from student import Student
 from datetime import date
 from random import randint
-from generators import *
+# from generators import *
 
 class Class:
     def __init__(self, classname='', students = []):
@@ -19,8 +19,11 @@ class Class:
             if s.name == removing:
                 self.students.remove(s)
 
-if __name__ == '__main__':
-    c = Class('A', [generate_student(), generate_student()])
-    print(c)
-    c.add_student(generate_student())
-    print(c)
+# if __name__ == '__main__':
+    # c = Class('A', [generate_student(), generate_student()])
+    # print(c)
+    # for i in range(3):
+    #     c.add_student(generate_student())
+    #     print(c)
+    # d = Class('B', [Student('Rushil', 'M'), generate_student()])
+    # print(d)

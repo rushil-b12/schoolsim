@@ -1,6 +1,7 @@
 from random import choice, randint
 from datetime import date
 from student import Student
+from classs import Class
 
 subjects = {'sciences': ['biology', 'physics', 'chemistry'], 'humanities': ['geography', 'history', 'economics', 'computerscience', 'psychology', 
 'politics', 'business', 'environmental'], 'arts': ['music', 'art', 'film', 'drama', 'designtechnology'], 'languages': ['chinese', 'spanish', 'french', 'german']}
@@ -81,6 +82,12 @@ def generate_student():
     subjects = choose_subjects()
     
     return Student(name, gender, dob, subjects)
+    
+def generate_class(number_of_students):
+    alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    letter = alphabet[randint(0, len(alphabet))]
+    alphabet.remove(letter)
+    return Class(letter, [generate_student() for i in range(number_of_students)])
 
 if __name__ == '__main__':
     print(generate_student())
